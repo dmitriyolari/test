@@ -4680,3 +4680,12 @@ button:hover {
         background: url(../img/marketplace/arrow.webp) center/contain no-repeat !important
     }
 }
+
+.credit-page__tab {
+  min-height: 570px;
+}
+
+#finaxe-calculator {
+  min-height: 120px;
+  max-height: 120px;
+}
