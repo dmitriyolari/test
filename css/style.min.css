@@ -3714,8 +3714,11 @@ button:hover {
     }
 
     .page__main {
-        height: 530px;
-        padding-top: 78px
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 100%;
     }
 
     .input {
