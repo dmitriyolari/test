@@ -483,7 +483,6 @@ body._lock {
 
 .cart-solution__item {
     display: flex;
-    position: relative;
     height: max-content;
     min-height: 34px
 }
@@ -508,26 +507,16 @@ body._lock {
 .cart-solution__room {
     color: #dce2ea;
     position: absolute;
-    right: 25px;
-    font-size: 30px
-}
-
-.img-solution {
-    position: relative;
-    width: 50%
-}
-
-.img-solution__item {
-    position: absolute;
-    left: 0;
-    top: 0
-}
-
-.img-solution__item.active {
-    display: block
+    right: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    cursor: pointer;
 }
 
 .img-solution__item video {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     max-width: 100%;
     max-height: 500px;
     height: 100%
@@ -608,8 +597,8 @@ body._lock {
     height: 0;
     visibility: hidden;
     transition: opacity 0.8s linear;
-    transform:scaleY(1);
-    transform-origin:top; 
+    transform: scaleY(1);
+    transform-origin: top;
 }
 
 .drop-possib__text p {
@@ -2853,7 +2842,7 @@ button:hover {
         display: none
     }
 
-    .cart-solution .cart-solution__item .cart-solution__description, .cart-solution .cart-solution__item .cart-solution__name {
+    .cart-solution .cart-solution__item .cart-solution__description, .cart-solution .cart-solution__item .img-solution__item, .cart-solution .cart-solution__item .cart-solution__name {
         opacity: 0;
         height: 0;
         visibility: hidden;
@@ -2874,6 +2863,13 @@ button:hover {
         visibility: visible
     }
 
+    .cart-solution .cart-solution__item.active .img-solution__item {
+        opacity: 1;
+        height: auto;
+        visibility: visible;
+        transition: height 1.4s, opacity 1.8s
+    }
+
     .cart-solution .cart-solution__item.active .cart-solution__description, .cart-solution .cart-solution__item.active .cart-solution__name {
         animation-name: down1;
         animation-duration: .3s;
@@ -2884,7 +2880,6 @@ button:hover {
     }
 
     .cart-solution .cart-solution__item.active .cart-solution__room {
-        top: 20px;
         font-size: 42px
     }
 }
@@ -4065,7 +4060,7 @@ button:hover {
     }
 
     .img-solution__item {
-        display: block;
+        display: none;
         text-align: center;
         top: 70%;
         right: 0
@@ -4682,10 +4677,10 @@ button:hover {
 }
 
 .credit-page__tab {
-  min-height: 570px;
+    min-height: 570px;
 }
 
 #finaxe-calculator {
-  min-height: 120px;
-  max-height: 120px;
+    min-height: 120px;
+    max-height: 120px;
 }
